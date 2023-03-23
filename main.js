@@ -246,7 +246,7 @@ $(document).ready(function(){
 		})
 	})
 	/*
-		whenever users click on .update class we will take product id of that row 
+		whenever user click on .update class we will take product id of that row 
 		and send it to action.php to perform product qty updation operation
 	*/
 	$("body").delegate(".update","click",function(event){
