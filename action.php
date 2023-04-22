@@ -140,7 +140,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 						<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
 						<b>Product is already added into the cart Continue Shopping..!</b>
 				</div>
-			";//not in video
+			";
 		} else {
 			$sql = "INSERT INTO `cart`
 			(`p_id`, `ip_add`, `user_id`, `qty`) 
@@ -282,12 +282,12 @@ if (isset($_POST["Common"])) {
 							</form>';
 					
 				}else if(isset($_SESSION["uid"])){
-					//Paypal checkout form
+					//checkout form
 					echo '
-						</form>
+					
 						<form action="" method="post">
-							<input type="hidden" name="cmd" value="_cart">
-							<input type="hidden" name="business" value="shoppingcart@ecommerceastro.com">
+							
+							
 							<input type="hidden" name="upload" value="1">';
 							  
 							$x=0;
@@ -302,15 +302,13 @@ if (isset($_POST["Common"])) {
 								     <input type="hidden" name="quantity_'.$x.'" value="'.$row["qty"].'">';
 								}
 							  
-							echo   
-								'<input type="hidden" name="return" value="http://localhost/project1/payment_success.php"/>
-					                <input type="hidden" name="notify_url" value="http://localhost/agrovetphp/payment_success.php">
-									<input type="hidden" name="cancel_return" value="http://localhost/agrovetphp/cancel.php"/>
+							echo  
+						
+								'
 									<input type="hidden" name="lipanampesa" value="Ksh"/>
 									<input type="hidden" name="custom" value="'.$_SESSION["uid"].'"/>
-									<input style="float:right;margin-right:80px;" type="image" name="submit"
-										src="agrovet_db/product_images/MPESA.jpeg" alt="Mpesa checkout"
-										alt="Safaricom - simple, transparent and secure">
+									<a href="#" class="btn btn-success btn-lg" style="float:right;margin-right:80px;">Proceed To Mpesa checkout</a>
+									
 								</form>';
 				}
 			}

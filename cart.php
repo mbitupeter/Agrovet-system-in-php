@@ -33,6 +33,7 @@ require "config/constants.php";
 			<ul class="nav navbar-nav">
 				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
 				<li><a href="index.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
+				<li><a href="vet.php"><span class="glyphicon glyphicon-user"></span> Vet</a></li>
 			</ul>
 		</div>
 	</div>

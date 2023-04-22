@@ -37,7 +37,7 @@ if(!isset($_SESSION["uid"])){
 			<ul class="nav navbar-nav">
 				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
 				<li><a href="index.php"><span class="glyphicon glyphicon-modal-window"></span> Product</a></li>
-				<li><a href="vet.php"><span class="glyphicon glyphicon-user"></span> Vet</a></li>
+                <li><a href="vet.php"><span class="glyphicon glyphicon-user"></span> Vet</a></li>
 				<li style="width:300px;left:10px;top:10px;"><input type="text" class="form-control" id="search"></li>
 				<li style="top:10px;left:20px;"><button class="btn btn-primary" id="search_btn">Search</button></li>
 			</ul>
@@ -69,7 +69,7 @@ if(!isset($_SESSION["uid"])){
 						<li><a href="customer_order.php" style="text-decoration:none; color:black;">Orders</a></li>
 						<li class="divider"></li>
 						
-						<li><a href="vet.php" style="text-decoration:none; color:black;">Vet Services</a></li>
+						<li><a href="customer_order.php" style="text-decoration:none; color:black;">Vet Services</a></li>
 						<li class="divider"></li>
 
 						<li><a href="logout.php" style="text-decoration:none; color:black;">Logout</a></li>
@@ -80,95 +80,96 @@ if(!isset($_SESSION["uid"])){
 		</div>
 	</div>
 	</div>
+    
+    <p><br/></p>
 	<p><br/></p>
 	<p><br/></p>
-	<p><br/></p>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-1"></div>
-			<div class="col-md-2">
-				<div id="get_category">
-				</div>
-				
-				<div id="get_brand">
-				</div>
-				
-			</div>
-			<div class="col-md-8">	
-				<div class="row">
-					<div class="col-md-12 col-xs-12" id="product_msg">
-					</div>
-				</div>
-				<div class="panel panel-info" id="scroll">
-					<div class="panel-heading">Products</div>
-					<div class="panel-body">
-						<div id="get_product">
-							<!--Here we get product jquery Ajax Request-->
-						</div>
-						
-					</div>
-					<div class="panel-footer"> <p> &copy; <?php echo date("Y"); ?>Computer Technology project</p></div>
-				</div>
-			</div>
-			<div class="col-md-1"></div>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<center>
-					<ul class="pagination" id="pageno">
-						<li><a href="#">1</a></li>
-					</ul>
-				</center>
-			</div>
-		</div>
-	</div>
-</body>
-</html>
 
+    <section id="vet-header">
+    <h2>#Vetmpoa</h2>
+    <p> <strong>The best for your pets!</strong></p>
+   </section>
 
+   <section id="appoint-details" class="section-p1">
+    <form action="https://formspree.io/f/mqkolyrg" method="post">
+        <span>BOOK AN APPOINTMENT</span>
+        <input type="text" name="Name" placeholder="Full name" required>
+        <input type="text" name="Phone" placeholder="Your phone no" required>
+        <input type="text" name="Email" placeholder="Your Email" required>
+        <input type="text" name="Pet" placeholder="Type of pet" required>
+        <input type="text" name="Time" placeholder="Time for appointment" required>
+        <button class="normal">Book</button>
+    </form>
+   </section>
+    </body>
+    <style>
+        p{
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+    }
+    h2{
+    font-size: 46px;
+    line-height: 54px;
+    color: #222;
+    }
+        .section-p1{
+    padding: 40px 80px;
+    }
+    button.normal{
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 20px;
+    color: black;
+    background-color: wheat;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0,2s;
+    }
+    #vet-header{
+    background-image: url('product_images/ban.jpg');
+    width: 100%;
+    height:50vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 14px;
+    }
+    #appoint-details{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+    padding: 80px;
+    border: 1px solid #e1e1e1;
 
+    }
+    #appoint-details form{
+    width: 70%;
+    margin-left: 12%;
+    display: flex;
+    padding: 0 70px ;
+    flex-direction: column;
+    align-items: center;
+    }
+    #appoint-details form input{
+    width: 100%;
+    padding: 12px 15px;
+    outline: none;
+    margin-bottom: 20px;
+    border: 1px solid #e1e1e1;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    #appoint-details form button{
+    background-color: #088178;
+    color: #fff;
+    }
+    #appoint-details form span{
+    font-size: 26px;
+    }
+    </style>
+    <div class="panel-footer" style="align-items:center; display:flex; justify-content: center; ">&copy; <?php echo date("Y"); ?>Computer Technology project</p></div>
+    </html>

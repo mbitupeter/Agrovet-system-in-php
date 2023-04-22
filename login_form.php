@@ -1,16 +1,15 @@
 <?php
-#this is Login form page , if user is already logged in then we will not allow user to access this page by executing isset($_SESSION["uid"])
-#if below statment return true then we will send user to their profile.php page
+// Login form page
 if (isset($_SESSION["uid"])) {
 	header("location:profile.php");
 }
 //in action.php page if user click on "ready to checkout" button that time we will pass data in a form from action.php page
 if (isset($_POST["login_user_with_product"])) {
-	//this is product list array
+	//product list array
 	$product_list = $_POST["product_id"];
-	//here we are converting array into json format because array cannot be store in cookie
+
 	$json_e = json_encode($product_list);
-	//here we are creating cookie and name of cookie is product_list
+	
 	setcookie("product_list",$json_e,strtotime("+1 day"),"/","","",TRUE);
 
 }
@@ -38,6 +37,7 @@ if (isset($_POST["login_user_with_product"])) {
 			<ul class="nav navbar-nav">
 				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
 				<li><a href="index.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
+				<li><a href="vet.php"><span class="glyphicon glyphicon-user"></span> Vet</a></li>
 			</ul>
 		</div>
 	</div>
@@ -66,7 +66,6 @@ if (isset($_POST["login_user_with_product"])) {
 							<input type="password" class="form-control" name="password" id="password" required/>
 							<p><br/></p>
 							<a href="#" style="color:#333; list-style:none;">Forgotten Password?</a><input type="submit" class="btn btn-success" style="float:right;" Value="Login">
-							<!--If user dont have an account then he/she will click on create account button-->
 							<div><a href="customer_registration.php?register=1">Create a new account?</a></div>						
 						</form>
 				</div>

@@ -36,6 +36,7 @@ if(isset($_SESSION["uid"])){
 			<ul class="nav navbar-nav">
 				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
 				<li><a href="index.php"><span class="glyphicon glyphicon-modal-window"></span> Products</a></li>
+				<li><a href="vet.php"><span class="glyphicon glyphicon-user"></span> Vet</a></li>
 			</ul>
 			<form class="navbar-form navbar-left">
 		        <div class="form-group">
